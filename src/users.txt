@@ -1,2 +1,5 @@
 portainer:
 admin/Admin123*
+
+rabbitmq:
+guest/guest
