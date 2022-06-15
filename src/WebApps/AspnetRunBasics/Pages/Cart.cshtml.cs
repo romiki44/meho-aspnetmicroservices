@@ -29,8 +29,8 @@ namespace AspnetRunBasics
             var userName = "swn";
             var basket = await basketService.GetBasket(userName);
 
-            var item = basket.Items.Single(x => x.ProductId == productId);
-            basket.Items.Remove(item);
+            var items = basket.Items.Where(x => x.ProductId == productId);
+            basket.Items.RemoveAll(x => x.ProductId == productId);
 
             var basketUpdated = await basketService.UpdateBasket(basket);
 
